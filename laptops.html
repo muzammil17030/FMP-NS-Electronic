@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="sv">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link type="text/css" href="CSS/main.css" rel="stylesheet" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+            integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+            crossorigin="anonymous"
+        />
+        <script src="JS/jquery-3.5.1.min.js"></script>
+        <script src="JS/multislider.min.js"></script>
+        <title>laptop</title>
+    </head>
+
+    <body>
+        <!--Navbar-->
+        <nav>
+            <!--Navbar has two part the top one and the bottom one-->
+            <!--Here is top one and in this part I put logo, my account part, and the shopping cart-->
+            <div class="navbar-top">
+                <div>
+                    <button id="menuButton"><i class="fas fa-bars"></i></button>
+                    <!--Logo-->
+                    <a href="index.html">
+                        <h2 class="logo">NS Electeonic</h2>
+                    </a>
+                </div>
+                <div>
+                    
+                    <!--Shopping cart-->
+                    <div class="shopping-cart">
+                        <div class="sum-prices">
+                            <!--Shopping cart logo-->
+                            <i
+                                class="fas fa-shopping-cart shoppingCartButton"
+                            ></i>
+                            <!--The total prices of products in the shopping cart -->
+                            <h6 id="sum-prices"></h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Navbar bottom part -->
+            <!-- Here I put the links to the other pages or nav links -->
+            <div class="navbar" id="navbar">
+                <div class="links">
+                    <ul>
+                        <li class="nav-links">
+                            <a href="index.html"  class="link">Home</a>
+                        </li>
+                        <li class="nav-links">
+                            <a href="laptops.html" id="active" class="link">Laptops</a>
+                        </li>
+                        <li class="nav-links">
+                            <a href="Mobile.html" class="link">Mobiles</a>
+                        </li>
+                        <li class="nav-links">
+                            <a href="tabs.html" class="link">Tabs</a>
+                        </li>
+                        <li class="nav-links">
+                            <a href="Camera.html" class="link">Cameras</a>
+                        </li>
+                        <li class="nav-links">
+                            <a href="feedback.html" class="link">Feedback</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- The searchbar which will be in the right side of the links -->
+                <div class="searchbar">
+                    <form action="#">
+                        <input type="text" onkeyup="search()" id="search-item" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="Search">
+                        <i class="fa fa-search" id="search-icon"></i>
+                    </form>
+                </div>
+            </div>
+            <div class="producstOnCart hide">
+                <div class="overlay"></div>
+                <div class="top">
+                    <button id="closeButton">
+                        <i class="fas fa-times-circle"></i>
+                    </button>
+                    <h3>Cart</h3>
+                </div>
+                <ul id="buyItems">
+                    <h4 class="empty">Your shopping cart is empty</h4>
+                    <!-- <li class="buyItem">
+						<img src="Images/producs-images/Mobiles/galaxynote10.png">
+						<div>
+							<h5>Products Name</h5>
+							<h6>$199</h6>
+							<div>
+								<button>-</button>
+								<span class="countOfProduct">1</span>
+								<button>+</button>
+							</div>
+						</div>
+					</li> -->
+                </ul>
+                <button class="btn checkout hidden">Check out</button>
+            </div>
+        </nav>
+  
+        <main>
+            <section class="main-section">
+                <div class="product-container">
+                    <h3>HP laptops</h3>
+                    <div class="products">
+                        <div class="product">
+                            <div class="product-under">
+                                <figure class="product-image">
+                                    <img
+                                        src="Images/producs-images/Laptops/hp/hp1.png"
+                                        alt="popular labtops and computers"
+                                    />
+                                    <div class="product-over">
+                                        <button
+                                            class="btn btn-small addToCart"
+                                            data-product-id="1"
+                                        >
+                                            <i class="fas fa-cart-plus"></i>Add
+                                            to cart
+                                        </button>
+                                        <!-- <a
+                                            href="detail_page.html"
+                                            class="btn btn-small"
+                                            >More Info</a
+                                        > -->
+                                    </div>
+                                </figure>
+                                <div class="product-summary">
+                                    <h4 class="productName">HP Elite Book-1</h4>
+                                    <span class="stars"></span>
+                                    <p>
+                                        luctus quis et est. Integer pretium
+                                        purus
+                                    </p>
+                                    <h6 class="price">
+                                        $<span class="priceValue">999</span>
+                                    </h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product">
+                            <div class="product-under">
+                                <figure class="product-image">
+                                    <img
+                                        src="Images/producs-images/Laptops/hp/hp2.png"
+                                        alt="popular labtops and computers"
+                                    />
+                                    <div class="product-over">
+                                        <button
+                                            class="btn btn-small addToCart"
+                                            data-product-id="2"
+                                        >
+                                            <i class="fas fa-cart-plus"></i>Add
+                                            to cart
+                                        </button>
+                                        <!-- <a
+                                            href="detail_page.html"
+                                            class="btn btn-small"
+                                            >More Info</a
+                                        > -->
+                                    </div>
+                                </figure>
+                                <div class="product-summary">
+                                    <h4 class="productName">HP Elite Book-2</h4>
+                                    <span class="stars"></span>
+                                    <p>
+                                        luctus quis et est. Integer pretium
+                                        purus
+                                    </p>
+                                    <h6 class="price">
+                                        $<span class="priceValue">599</span>
+                                    </h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product">
+                            <div class="product-under">
+                                <figure class="product-image">
+                                    <img
+                                        src="Images/producs-images/Laptops/hp/hp3.png"
+                                        alt="popular labtops and computers"
+                                    />
+                                    <div class="product-over">
+                                        <button
+                                            class="btn btn-small addToCart"
+                                            data-product-id="3"
+                                        >
+                                            <i class="fas fa-cart-plus"></i>Add
+                                            to cart
+                                        </button>
+                                        <!-- <a
+                                            href="detail_page.html"
+                                            class="btn btn-small"
+                                            >More Info</a
+                                        > -->
+                                    </div>
+                                </figure>
+                                <div class="product-summary">
+                                    <h4 class="productName">HP Elite Book-3</h4>
+                                    <span class="stars"></span>
+                                    <p>
+                                        luctus quis et est. Integer pretium
+                                        purus
+                                    </p>
+                                    <h6 class="price">
+                                        $<span class="priceValue">650</span>
+                                    </h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product">
+                            <div class="product-under">
+                                <figure class="product-image">
+                                    <img
+                                        src="Images/producs-images/Laptops/hp/hp4.png"
+                                        alt="popular labtops and computers"
+                                    />
+                                    <div class="product-over">
+                                        <button
+                                            class="btn btn-small addToCart"
+                                            data-product-id="4"
+                                        >
+                                            <i class="fas fa-cart-plus"></i>Add
+                                            to cart
+                                        </button>
+                                        <!-- <a
+                                            href="detail_page.html"
+                                            class="btn btn-small"
+                                            >More Info</a
+                                        > -->
+                                    </div>
+                                </figure>
+                                <div class="product-summary">
+                                    <h4 class="productName">HP Elite Book-4</h4>
+                                    <span class="stars"></span>
+                                    <p>
+                                        luctus quis et est. Integer pretium
+                                        purus
+                                    </p>
+                                    <h6 class="price">
+                                        $<span class="priceValue">899</span>
+                                    </h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+          <!-- section2-------------------- -->
+
+          <section class="main-section">
+            <div class="product-container">
+                <h3>DELL laptops</h3>
+                <div class="products">
+                    <div class="product">
+                        <div class="product-under">
+                            <figure class="product-image">
+                                <img
+                                    src="Images/producs-images/Laptops/dell/dell1.png"
+                                    alt="popular labtops and computers"
+                                />
+                                <div class="product-over">
+                                    <button
+                                        class="btn btn-small addToCart"
+                                        data-product-id="1"
+                                    >
+                                        <i class="fas fa-cart-plus"></i>Add
+                                        to cart
+                                    </button>
+                                    <!-- <a
+                                        href="detail_page.html"
+                                        class="btn btn-small"
+                                        >More Info</a
+                                    > -->
+                                </div>
+                            </figure>
+                            <div class="product-summary">
+                                <h4 class="productName">Dell Latitude-1</h4>
+                                <span class="stars"></span>
+                                <p>
+                                    luctus quis et est. Integer pretium
+                                    purus
+                                </p>
+                                <h6 class="price">
+                                    $<span class="priceValue">999</span>
+                                </h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <div class="product-under">
+                            <figure class="product-image">
+                                <img
+                                    src="Images/producs-images/Laptops/dell/dell 2.png"
+                                    alt="popular labtops and computers"
+                                />
+                                <div class="product-over">
+                                    <button
+                                        class="btn btn-small addToCart"
+                                        data-product-id="2"
+                                    >
+                                        <i class="fas fa-cart-plus"></i>Add
+                                        to cart
+                                    </button>
+                                    <!-- <a
+                                        href="detail_page.html"
+                                        class="btn btn-small"
+                                        >More Info</a
+                                    > -->
+                                </div>
+                            </figure>
+                            <div class="product-summary">
+                                <h4 class="productName">Dell Latitude-2</h4>
+                                <span class="stars"></span>
+                                <p>
+                                    luctus quis et est. Integer pretium
+                                    purus
+                                </p>
+                                <h6 class="price">
+                                    $<span class="priceValue">599</span>
+                                </h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <div class="product-under">
+                            <figure class="product-image">
+                                <img
+                                    src="Images/producs-images/Laptops/dell/dell 3.png"
+                                    alt="popular labtops and computers"
+                                />
+                                <div class="product-over">
+                                    <button
+                                        class="btn btn-small addToCart"
+                                        data-product-id="3"
+                                    >
+                                        <i class="fas fa-cart-plus"></i>Add
+                                        to cart
+                                    </button>
+                                    <!-- <a
+                                        href="detail_page.html"
+                                        class="btn btn-small"
+                                        >More Info</a
+                                    > -->
+                                </div>
+                            </figure>
+                            <div class="product-summary">
+                                <h4 class="productName">Dell Latitude-3</h4>
+                                <span class="stars"></span>
+                                <p>
+                                    luctus quis et est. Integer pretium
+                                    purus
+                                </p>
+                                <h6 class="price">
+                                    $<span class="priceValue">650</span>
+                                </h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <div class="product-under">
+                            <figure class="product-image">
+                                <img
+                                    src="Images/producs-images/Laptops/dell/dell 4.png"
+                                    alt="popular labtops and computers"
+                                />
+                                <div class="product-over">
+                                    <button
+                                        class="btn btn-small addToCart"
+                                        data-product-id="4"
+                                    >
+                                        <i class="fas fa-cart-plus"></i>Add
+                                        to cart
+                                    </button>
+                                    <!-- <a
+                                        href="detail_page.html"
+                                        class="btn btn-small"
+                                        >More Info</a
+                                    > -->
+                                </div>
+                            </figure>
+                            <div class="product-summary">
+                                <h4 class="productName">Dell Latitude-4</h4>
+                                <span class="stars"></span>
+                                <p>
+                                    luctus quis et est. Integer pretium
+                                    purus
+                                </p>
+                                <h6 class="price">
+                                    $<span class="priceValue">899</span>
+                                </h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- section3-------------------- -->
+
+        <section class="main-section">
+            <div class="product-container">
+                <h3>APPLE laptops</h3>
+                <div class="products">
+                    <div class="product">
+                        <div class="product-under">
+                            <figure class="product-image">
+                                <img
+                                    src="Images/producs-images/Laptops/apple/mac 1.png"
+                                    alt="popular labtops and computers"
+                                />
+                                <div class="product-over">
+                                    <button
+                                        class="btn btn-small addToCart"
+                                        data-product-id="1"
+                                    >
+                                        <i class="fas fa-cart-plus"></i>Add
+                                        to cart
+                                    </button>
+                                    <!-- <a
+                                        href="detail_page.html"
+                                        class="btn btn-small"
+                                        >More Info</a
+                                    > -->
+                                </div>
+                            </figure>
+                            <div class="product-summary">
+                                <h4 class="productName">Mac Book-1</h4>
+                                <span class="stars"></span>
+                                <p>
+                                    luctus quis et est. Integer pretium
+                                    purus
+                                </p>
+                                <h6 class="price">
+                                    $<span class="priceValue">999</span>
+                                </h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <div class="product-under">
+                            <figure class="product-image">
+                                <img
+                                    src="Images/producs-images/Laptops/apple/mac 2.png"
+                                    alt="popular labtops and computers"
+                                />
+                                <div class="product-over">
+                                    <button
+                                        class="btn btn-small addToCart"
+                                        data-product-id="2"
+                                    >
+                                        <i class="fas fa-cart-plus"></i>Add
+                                        to cart
+                                    </button>
+                                    <!-- <a
+                                        href="detail_page.html"
+                                        class="btn btn-small"
+                                        >More Info</a
+                                    > -->
+                                </div>
+                            </figure>
+                            <div class="product-summary">
+                                <h4 class="productName">Mac Book-2</h4>
+                                <span class="stars"></span>
+                                <p>
+                                    luctus quis et est. Integer pretium
+                                    purus
+                                </p>
+                                <h6 class="price">
+                                    $<span class="priceValue">599</span>
+                                </h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <div class="product-under">
+                            <figure class="product-image">
+                                <img
+                                    src="Images/producs-images/Laptops/apple/mac 3.png"
+                                    alt="popular labtops and computers"
+                                />
+                                <div class="product-over">
+                                    <button
+                                        class="btn btn-small addToCart"
+                                        data-product-id="3"
+                                    >
+                                        <i class="fas fa-cart-plus"></i>Add
+                                        to cart
+                                    </button>
+                                    <!-- <a
+                                        href="detail_page.html"
+                                        class="btn btn-small"
+                                        >More Info</a
+                                    > -->
+                                </div>
+                            </figure>
+                            <div class="product-summary">
+                                <h4 class="productName">Mac Book-3</h4>
+                                <span class="stars"></span>
+                                <p>
+                                    luctus quis et est. Integer pretium
+                                    purus
+                                </p>
+                                <h6 class="price">
+                                    $<span class="priceValue">650</span>
+                                </h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <div class="product-under">
+                            <figure class="product-image">
+                                <img
+                                    src="Images/producs-images/Laptops/apple/mac 4.png"
+                                    alt="popular labtops and computers"
+                                />
+                                <div class="product-over">
+                                    <button
+                                        class="btn btn-small addToCart"
+                                        data-product-id="4"
+                                    >
+                                        <i class="fas fa-cart-plus"></i>Add
+                                        to cart
+                                    </button>
+                                    <!-- <a
+                                        href="detail_page.html"
+                                        class="btn btn-small"
+                                        >More Info</a
+                                    > -->
+                                </div>
+                            </figure>
+                            <div class="product-summary">
+                                <h4 class="productName">Mac Boock Pro</h4>
+                                <span class="stars"></span>
+                                <p>
+                                    luctus quis et est. Integer pretium
+                                    purus
+                                </p>
+                                <h6 class="price">
+                                    $<span class="priceValue">899</span>
+                                </h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        </main>
+        <footer>
+            <div class="footer-second">
+                <div class="footer-column-1">
+                    <h3>News</h3>
+                    <a href="#"></a>
+                    <a href="#">Lorem ipsum</a>
+                    <a href="#">dolor sit</a>
+                </div>
+                <div class="footer-column-2">
+                    <h3>Customer service</h3>
+                    <a href="#">Contact</a>
+                    <a href="#">Track your order</a>
+                    <a href="#">terms of purchase</a>
+                    <a href="#">common questions</a>
+                </div>
+                <div class="footer-column-3">
+                    <h3>About us</h3>
+                    <a href="#">Who we are</a>
+                    <a href="#">Our Services</a>
+                    <a href="#">Events</a>
+                    <a href="#">Data protection</a>
+                </div>
+            </div>
+            <ul class="footer-last">
+                <li>
+                    <p><i class="fab fa-cc-mastercard"></i></p>
+                </li>
+                <li>
+                    <p><i class="fab fa-cc-paypal"></i></p>
+                </li>
+                <li>
+                    <p><i class="fab fa-cc-visa"></i></p>
+                </li>
+                <li>
+                    <p><i class="fab fa-cc-amex"></i></p>
+                </li>
+            </ul>
+        </footer>
+        <script src="JS/script.js"></script>
+        <script src="shopping-cart.js"></script>
+        
+    </body>
+</html>
